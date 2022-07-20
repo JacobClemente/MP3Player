@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Jacob\'s MP3 Player</string>
+    <string name="button_play">Play Audio</string>
+    <string name="button_next">Advance Audio</string>
+    <string name="now_playing">Now Playing: </string>
+    <string name="add_to_queue">Add song to queue</string>
+</resources>

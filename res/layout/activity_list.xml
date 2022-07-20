@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/listSongs"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:scrollbarSize="1dp"
+        android:scrollbarThumbVertical="@drawable/scrollbar"
+        app:layout_constraintBottom_toTopOf="@+id/nowPlaying"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ListView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/nowPlaying"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/nowPlaying_art"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/aqua"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nowPlaying_flavor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/now_playing"
+            android:textSize="8sp"
+            app:layout_constraintStart_toEndOf="@+id/nowPlaying_art"
+            app:layout_constraintTop_toTopOf="@+id/nowPlaying_art" />
+
+        <TextView
+            android:id="@+id/nowPlaying_artist"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:scrollHorizontally="true"
+            android:text="TextView"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/nowPlaying_queue"
+            app:layout_constraintStart_toStartOf="@+id/nowPlaying_flavor"
+            app:layout_constraintTop_toBottomOf="@+id/nowPlaying_title" />
+
+        <TextView
+            android:id="@+id/nowPlaying_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:scrollHorizontally="true"
+            android:text="Title"
+            app:layout_constraintEnd_toStartOf="@+id/nowPlaying_queue"
+            app:layout_constraintStart_toStartOf="@+id/nowPlaying_flavor"
+            app:layout_constraintTop_toBottomOf="@+id/nowPlaying_flavor" />
+
+        <ImageButton
+            android:id="@+id/nowPlaying_play"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:background="#00FFFFFF"
+            android:onClick="clickPlay"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/play" />
+
+        <ImageButton
+            android:id="@+id/nowPlaying_queue"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#00FFFFFF"
+            android:onClick="clickDisplayQueue"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/nowPlaying_play"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/queue" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
